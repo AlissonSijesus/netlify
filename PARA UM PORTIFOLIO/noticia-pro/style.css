@@ -1,0 +1,321 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f4f7fa;
+  color: #111;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.main-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+.main-nav ul {
+  display: flex;
+  gap: 30px;
+}
+.main-nav li a {
+  font-size: 1em;
+  color: #444;
+  transition: color 0.2s;
+}
+.main-nav li a:hover {
+  color: #007aff;
+}
+.search-icon {
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Hero */
+.hero {
+  background-color: #e9eef3;
+  padding: 60px 0;
+}
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero-text {
+  max-width: 600px;
+}
+.hero-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #007aff;
+}
+.hero-text p {
+  margin-bottom: 20px;
+  color: #444;
+}
+.hero-image {
+  max-width: 400px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #007aff;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.btn-primary:hover {
+  background-color: #005ecb;
+}
+.btn-secondary {
+  background-color: #f4f4f4;
+  color: #007aff;
+  padding: 10px 20px;
+  border: 2px solid #007aff;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+.btn-secondary:hover {
+  background-color: #007aff;
+  color: #fff;
+}
+
+/* Products */
+.products {
+  padding: 60px 0;
+  text-align: center;
+}
+.products h2 {
+  margin-bottom: 40px;
+  font-size: 2em;
+  font-weight: bold;
+}
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin: 0;
+}
+.product-card {
+  background-color: #fff;
+  /* border: 1px solid #ddd; */
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens dentro do card */
+  justify-content: flex-end; /* Garante que o conteúdo fique mais para baixo */
+}
+.product-card:hover {
+  transform: translateY(-10px);
+}
+.product-card h3 {
+  margin: 10px 0 ;
+}
+.product-card p {
+  font-weight: bold;
+  color: #007aff;
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  padding: 30px 0;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.social a {
+  color: #ccc;
+  margin: 0 10px;
+  font-size: 1.5em;
+  transition: color 0.2s;
+}
+.social a:hover {
+  color: #007aff;
+}
+.hero-swiper {
+  margin-top: 20px;
+}
+
+.swiper {
+  width: 100%;
+  height: 300px; /* Reduzida para dar visual mais leve */
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-slider {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.product-slider h2 {
+  margin-bottom: 40px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  height: 400px; /* Altura fixa */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 1.1em;
+  margin: 10px 0 5px;
+}
+
+.product-card p {
+  font-weight: bold;
+  color: #007aff;
+  margin-bottom: 10px;
+}
+
+/* Envolve o conteúdo textual em um container flexível */
+.product-card .content-wrapper {
+  flex-grow: 1; /* ocupa o espaço entre a imagem e o botão */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.product-card .btn-secondary {
+  align-self: center;
+  margin-top: auto;
+}
+
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+
+
+
+
+
+.swiper-button-next, .swiper-button-prev {
+  color: #007aff;
+}
+
+.swiper-pagination-bullet {
+  background-color: #007aff;
+}
+.reasons-to-buy {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.reasons-to-buy h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #007aff;
+  font-weight: bold;
+}
+
+.reason-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.reason-card {
+  background-color: #fff;
+  padding: 25px;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.reason-card:hover {
+  transform: translateY(-10px);
+}
+
+.reason-card i {
+  font-size: 3em;
+  color: #007aff;
+  margin-bottom: 20px;
+}
+
+.reason-card h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.reason-card p {
+  color: #666;
+  font-size: 1em;
+}
+/* Garante que os slides de produto do swiper fiquem com o mesmo estilo dos cards */
+.productSwiper .swiper-slide {
+  width: 300px !important; /* igual à largura da .product-card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  justify-content: center;
+}

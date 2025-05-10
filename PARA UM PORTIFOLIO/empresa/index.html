@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroTrust</title>
+
+  <!-- Fonte moderna e clean -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap + Ícones -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Garantir que o scroll suave funcione */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Estilo básico para o conteúdo */
+    section {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    section.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<script>
+  // Função para rolagem suave personalizada sem tranco
+  function smoothScrollTo(element) {
+    const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 1000; // Duração da rolagem suave em milissegundos (aumentado para ser mais suave)
+    let startTime = null;
+
+    function scrollAnimation(currentTime) {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+
+      window.scrollTo(0, startPosition + distance * progress);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(scrollAnimation);
+      } else {
+        // Corrige a posição final para evitar qualquer tranco
+        window.scrollTo(0, targetPosition);
+      }
+    }
+
+    requestAnimationFrame(scrollAnimation);
+  }
+
+  // Função para mostrar o conteúdo das seções ao clicar no menu
+  function mostrarConteudo(sectionId) {
+    // Esconde todas as seções
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.classList.remove('show'); // Remove a classe 'show' para esconder
+      section.classList.add('d-none');  // Adiciona a classe 'd-none' para garantir que fique oculta
+    });
+
+    // Exibe a seção selecionada
+    const selectedSection = document.getElementById(sectionId);
+    selectedSection.classList.remove('d-none');  // Remove 'd-none' para tornar visível
+    selectedSection.classList.add('show');      // Adiciona 'show' para aplicar a transição suave
+
+    // Rolagem suave até a seção selecionada
+    smoothScrollTo(selectedSection);
+  }
+
+  // Rolagem suave até a seção inicial (Quem Somos) ao carregar a página
+  window.addEventListener('load', function() {
+    // Atraso de 500ms para garantir que a página tenha carregado completamente
+    setTimeout(function() {
+      const firstSection = document.getElementById('quem-somos'); // Seção inicial
+      if (firstSection) {
+        smoothScrollTo(firstSection);
+      }
+    }, 500);
+  });
+</script>
+<body>
+  <!-- Vídeo de fundo -->
+  <video autoplay muted loop id="bg-video">
+    <source src="video/168399-839215138.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Conteúdo -->
+  <div class="overlay d-flex flex-column text-center text-white">
+    <header class="mb-5 mt-4">
+      <h1 class="display-4 fw-bold">AgroTrust</h1>
+      <p class="lead fw-light">Soluções inteligentes para o campo</p>
+    </header>
+
+    <!-- Menu com botões separados e responsivos -->
+    <nav class="menu d-flex justify-content-center flex-wrap gap-4">
+      <a href="#" class="menu-item" onclick="mostrarConteudo('quem-somos')">
+        <i class="bi bi-person-circle me-2"></i>Quem Somos
+      </a>
+      <a href="#" class="menu-item" onclick="mostrarConteudo('galeria')">
+        <i class="bi bi-images me-2"></i>Galeria
+      </a>
+      <a href="#" class="menu-item" onclick="mostrarConteudo('servicos')">
+        <i class="bi bi-briefcase me-2"></i>Serviços
+      </a>
+      <a href="#" class="menu-item" onclick="mostrarConteudo('contato')">
+        <i class="bi bi-envelope me-2"></i>Contato
+      </a>
+    </nav>
+    <!-- Seções -->
+  <section id="quem-somos" class="container py-5 text-white ">
+    <h2 class="text-center mb-4">Quem Somos</h2>
+    <p>Texto explicativo sobre a empresa.</p>
+  </section>
+
+  <section id="galeria" class="container py-5 text-white d-none">
+    <h2 class="text-center mb-4">Galeria</h2>
+    <div class="row g-4">
+      <!-- 10 imagens de exemplo -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="https://th.bing.com/th/id/OIP.QA-XBtf4fgAXIMLNIsrCFgHaFW?rs=1&pid=ImgDetMain" class="img-fluid rounded shadow-sm gallery-img" alt="Foto 1">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="https://blog.syngentadigital.ag/wp-content/uploads/2022/02/TRATORES.jpg" class="img-fluid rounded shadow-sm gallery-img" alt="Foto 1">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="https://th.bing.com/th/id/R.1b978bd29f714ac98bb6229874b23bd3?rik=PJO3KOFHNgixRA&riu=http%3a%2f%2fportalmaquinasagricolas.com.br%2fwp-content%2fuploads%2f2019%2f08%2ftratores-MF-4200-Xtra.jpg&ehk=hZys5YjwQcawCRDH0dZelT5ARtuV%2bNRcVWppYHiE0XQ%3d&risl=&pid=ImgRaw&r=0" class="img-fluid rounded shadow-sm gallery-img" alt="Foto 1">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="https://s1.1zoom.me/b5050/165/JCB_Fastrac_4220_Tractor_Yellow_White_background_584413_3840x2400.jpg" class="img-fluid rounded shadow-sm gallery-img" alt="Foto 1">
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <img src="https://www.deere.com.br/assets/images/region-3/products/tractors/large/9r-series/9520r/trator_9520r_campo1_large_8c84c9957b4dc68152b64e7367463310fabf4f53.jpg" class="img-fluid rounded shadow-sm gallery-img" alt="Foto 1">
+      </div>
+      <!-- Outras imagens... -->
+    </div>
+  </section>
+
+  <section id="contato" class="container py-5 text-white d-none">
+    <h2 class="text-center mb-4">Entre em Contato</h2>
+    <p class="text-center mb-5">Estamos prontos para oferecer a melhor solução para sua produção agrícola.</p>
+  
+    <div class="row justify-content-center text-center gy-4">
+      <div class="col-md-4">
+        <i class="bi bi-telephone-fill fs-2 text-warning mb-2"></i>
+        <h5>Telefone</h5>
+        <p>(11) 4002-8922<br>Seg. a Sex. - 8h às 18h</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-envelope-fill fs-2 text-warning mb-2"></i>
+        <h5>Email</h5>
+        <p>contato@agrotrust.com<br>suporte@agrotrust.com</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-geo-alt-fill fs-2 text-warning mb-2"></i>
+        <h5>Endereço</h5>
+        <p>Rodovia das Lavouras, Km 45<br>Zona Rural - Interior de SP</p>
+      </div>
+    </div>
+  
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-success me-3"><i class="bi bi-whatsapp me-2"></i>WhatsApp</a>
+      <a href="mailto:contato@agrotrust.com" class="btn btn-outline-light me-3"><i class="bi bi-envelope me-2"></i>Enviar E-mail</a>
+      <a href="#" class="btn btn-outline-warning"><i class="bi bi-geo-alt me-2"></i>Ver no Mapa</a>
+    </div>
+  </section>
+
+  <section id="servicos" class="container py-5 text-white d-none">
+    <h2 class="text-center mb-5">Nossos Serviços</h2>
+  
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <h4>Consultoria Agrícola Personalizada</h4>
+        <p>Oferecemos suporte técnico e estratégico para aumentar a produtividade da sua plantação, com foco em sustentabilidade e inovação no uso do solo.</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="https://th.bing.com/th/id/R.a492ae2aff72434eac19b1765dba1a1d?rik=e4rkiqXut7TLog&pid=ImgRaw&r=0" class="img-fluid rounded shadow-sm" alt="Consultoria Agrícola">
+      </div>
+    </div>
+  
+    <div class="row align-items-center flex-md-row-reverse mb-5">
+      <div class="col-md-6">
+        <h4>Monitoramento por Drones</h4>
+        <p>Realizamos sobrevoos com drones para mapear a área, identificar falhas de cultivo e gerar dados precisos sobre o desempenho das lavouras.</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="https://th.bing.com/th/id/OIP.FT--DRmi718ipfyc2XLr9wHaEK?rs=1&pid=ImgDetMain" class="img-fluid rounded shadow-sm" alt="Drones no Campo">
+      </div>
+    </div>
+  
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <h4>Gestão Climática Inteligente</h4>
+        <p>Utilizamos sistemas de previsão meteorológica e sensores ambientais para otimizar o uso de recursos e proteger a lavoura contra mudanças bruscas no clima.</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="https://th.bing.com/th/id/OIP.3w-dskeshUQzyR2EwoM1kAHaEJ?rs=1&pid=ImgDetMain" class="img-fluid rounded shadow-sm" alt="Gestão Climática">
+      </div>
+    </div>
+  </section>
+  
+</div>
+    
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+/* Reset básico para garantir consistência entre os navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo e fontes */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Cabeçalho / Navbar */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 120px;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .menu li {
+    margin: 0 1rem;
+}
+
+.navbar .menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .menu li a:hover {
+    color: #f4a261;
+}
+
+/* Seção Hero */
+.hero {
+    background-color: #2a9d8f;
+    color: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn-primary {
+    background-color: #f4a261;
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.hero .btn-primary:hover {
+    background-color: #e76f51;
+}
+
+/* Seção de Produtos */
+.produtos {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.produtos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.produtos-lista {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.produto {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+.produto img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.produto h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.produto p {
+    margin: 1rem 0;
+}
+
+.produto .btn-secundario {
+    background-color: #2a9d8f;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.produto .btn-secundario:hover {
+    background-color: #264653;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .produtos-lista {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .produto {
+        width: 80%;
+        margin: 1rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .navbar .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .menu li {
+        margin: 0.5rem 0;
+    }
+}
+/* No seu arquivo CSS (ex: styles.css) */
+/* No seu arquivo CSS */
+@font-face {
+    font-family: 'Canesa Elegant Serif';
+    src: url('font/CanesaElegantSerif-Reguar.ttf') format('truetype'); /* Ajuste o caminho, conforme necessário */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Canesa Elegant Serif', serif;
+}
+.gruppo-regular {
+    font-family: "Gruppo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  

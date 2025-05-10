@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Administração de Produtos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Adicionar Novo Produto</h2>
+    <form id="form-adicionar" class="space-y-4">
+      <input type="text" id="nome" placeholder="Nome do Produto" class="p-2 w-full border rounded" />
+      <input type="number" id="preco" placeholder="Preço" class="p-2 w-full border rounded" />
+      <textarea id="descricao" placeholder="Descrição" class="p-2 w-full border rounded"></textarea>
+      <input type="file" id="imagemProduto" accept="image/*" required />
+      <img id="preview-imagem" class="hidden w-32 h-32 mt-4" alt="Pré-visualização da imagem" />
+      <input type="text" id="tag" placeholder="Tag (opcional)" class="p-2 w-full border rounded" />
+      <button type="submit" class="bg-blue-600 text-white p-2 rounded">Adicionar Produto</button>
+    </form>
+  </div>
+
+  <div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Produtos Adicionados</h2>
+    <div id="lista-produtos" class="grid grid-cols-3 gap-6"></div>
+  </div>
+
+  <div class="container mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4">Loja</h2>
+    <div id="lista-produtos-loja" class="grid grid-cols-3 gap-6"></div>
+  </div>
+
+  <script>
+    window.onload = function () {
+      function getProdutos() {
+        const produtos = localStorage.getItem('produtos');
+        return produtos ? JSON.parse(produtos) : [];
+      }
+
+      function salvarProdutos(produtos) {
+        localStorage.setItem('produtos', JSON.stringify(produtos));
+      }
+
+      function renderizarProdutosAdmin() {
+        const listaProdutos = document.getElementById('lista-produtos');
+        const produtos = getProdutos();
+        listaProdutos.innerHTML = '';
+
+        produtos.forEach((produto, index) => {
+          const divProduto = document.createElement('div');
+          divProduto.className = "bg-white p-5 rounded-lg shadow-md group relative";
+          divProduto.innerHTML = `
+            <img src="${produto.imagem}" alt="${produto.nome}" class="w-full h-56 object-cover rounded-lg mb-4">
+            <h3 class="text-lg font-semibold text-gray-800">${produto.nome}</h3>
+            <p class="text-sm text-gray-500">${produto.descricao}</p>
+            <span class="block text-lg font-bold text-blue-600">R$ ${produto.preco.toFixed(2)}</span>
+            <span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded" style="display:${produto.esgotado ? 'block' : 'none'}">Esgotado</span>
+            <button class="absolute bottom-4 left-4 text-blue-600 hover:text-blue-500 transition" onclick="editarProduto(${index})">Editar</button>
+            <button class="absolute bottom-4 right-4 text-red-600 hover:text-red-500 transition" onclick="excluirProduto(${index})">Excluir</button>
+            <button class="absolute top-2 left-2 text-yellow-500 hover:text-yellow-400 transition" onclick="alternarEsgotado(${index})">${produto.esgotado ? 'Disponível' : 'Esgotado'}</button>
+          `;
+          listaProdutos.appendChild(divProduto);
+        });
+      }
+
+      function renderizarProdutosNaLoja() {
+        const listaLoja = document.getElementById('lista-produtos-loja');
+        const produtos = getProdutos();
+        listaLoja.innerHTML = '';
+
+        produtos.forEach(produto => {
+          if (!produto.esgotado) {
+            const divProduto = document.createElement('div');
+            divProduto.className = "bg-white p-4 rounded shadow-md";
+            divProduto.innerHTML = `
+              <img src="${produto.imagem}" alt="${produto.nome}" class="w-full h-40 object-cover rounded mb-2">
+              <h3 class="text-lg font-semibold">${produto.nome}</h3>
+              <p class="text-sm text-gray-600 mb-2">${produto.descricao}</p>
+              <span class="text-blue-600 font-bold">R$ ${produto.preco.toFixed(2)}</span>
+            `;
+            listaLoja.appendChild(divProduto);
+          }
+        });
+      }
+
+      document.getElementById('form-adicionar').addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value;
+        const preco = parseFloat(document.getElementById('preco').value);
+        const descricao = document.getElementById('descricao').value;
+        const imagem = document.getElementById('imagemProduto').files[0];
+        const tag = document.getElementById('tag').value || '';
+
+        if (imagem) {
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            const produtos = getProdutos();
+            produtos.push({
+              nome,
+              preco,
+              descricao,
+              imagem: reader.result,
+              tag,
+              esgotado: false
+            });
+
+            salvarProdutos(produtos);
+            renderizarProdutosAdmin();
+            renderizarProdutosNaLoja();
+            document.getElementById('form-adicionar').reset();
+            document.getElementById('preview-imagem').classList.add('hidden');
+          };
+          reader.readAsDataURL(imagem);
+        }
+      });
+
+      document.getElementById('imagemProduto').addEventListener('change', function () {
+        const file = this.files[0];
+        const preview = document.getElementById('preview-imagem');
+        const reader = new FileReader();
+
+        reader.onloadend = function () {
+          preview.src = reader.result;
+          preview.classList.remove('hidden');
+        };
+
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      });
+
+      window.editarProduto = function (index) {
+        const produtos = getProdutos();
+        const produto = produtos[index];
+        document.getElementById('nome').value = produto.nome;
+        document.getElementById('preco').value = produto.preco;
+        document.getElementById('descricao').value = produto.descricao;
+        document.getElementById('tag').value = produto.tag;
+        document.getElementById('imagemProduto').value = '';
+        excluirProduto(index);
+      }
+
+      window.excluirProduto = function (index) {
+        const produtos = getProdutos();
+        produtos.splice(index, 1);
+        salvarProdutos(produtos);
+        renderizarProdutosAdmin();
+        renderizarProdutosNaLoja();
+      }
+
+      window.alternarEsgotado = function (index) {
+        const produtos = getProdutos();
+        produtos[index].esgotado = !produtos[index].esgotado;
+        salvarProdutos(produtos);
+        renderizarProdutosAdmin();
+        renderizarProdutosNaLoja();
+      }
+
+      // Inicialização
+      renderizarProdutosAdmin();
+      renderizarProdutosNaLoja();
+    };
+  </script>
+</body>
+</html>

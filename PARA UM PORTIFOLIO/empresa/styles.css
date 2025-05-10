@@ -1,0 +1,125 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Vídeo de fundo */
+
+  /* Estilo para garantir que o vídeo tenha fundo opaco e estável */
+  #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10; /* Garantir que o vídeo fique atrás do conteúdo */
+  }
+
+  /* Garantir que a sobreposição não tenha variação de opacidade */
+  .overlay {
+    position: 100%;
+    z-index: 1; /* Fica acima do vídeo */
+    background: rgba(0, 0, 0, 0.5); /* Cor escura com transparência */
+  }
+
+/* Esconder as seções inicialmente com opacidade zero */
+section {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none; /* Evitar que as seções escondidas interajam */
+  position: relative;
+  z-index: 0; /* Coloca as seções escondidas atrás */
+}
+
+/* Mostrar as seções com opacidade de 1 e permitir interação */
+section.show {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1; /* Garante que a seção visível fique à frente */
+}
+
+/* Título principal */
+header h1 {
+  letter-spacing: 2px;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Menu refinado */
+.menu {
+  margin-top: 10rem;
+  margin-bottom: 50px;
+}
+
+.menu-item {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 28px;
+  border-radius: 120px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.menu-item:hover {
+  background-color: rgba(85, 236, 48, 0.1);
+  transform: translateY(-2px);
+  color: #050505;
+}
+
+
+/* Estilo para as imagens da galeria */
+.gallery-img {
+  width: 100%;  /* Faz com que a imagem ocupe toda a largura disponível */
+  height: 200px;  /* Defina uma altura fixa para todas as imagens */
+  object-fit: cover;  /* Garante que a imagem cubra a área sem distorcer a proporção */
+  border-radius: 8px; /* Suaviza as bordas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar destaque */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);  /* Leve aumento no zoom ao passar o mouse */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);  /* Aumenta o efeito de sombra */
+}
+
+/* Esconder as seções inicialmente */
+/* Esconder as seções inicialmente */
+.d-none {
+  display: none;
+}
+
+/* Quando a seção aparecer, aplicar a transição */
+/* Desfoque leve na transição entre as seções */
+section {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+section.show {
+  opacity: 1;
+}
+
+.menu-item {
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  color: #72f040; /* Mudança de cor ao passar o mouse */
+  transform: scale(1.05); /* Aumenta levemente o botão ao passar o mouse */
+}

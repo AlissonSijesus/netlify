@@ -1,0 +1,483 @@
+/* Reset básico e tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+  }
+  
+  h1, h2, h3, h4 {
+    font-weight: 600;
+  }
+  
+  /* Cabeçalho */
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  header nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  header nav ul li {
+    margin-left: 20px;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  header nav ul li a:hover {
+    color: #007BFF;
+  }
+  
+  /* Seção Principal (Hero) */
+  #hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 50px;
+    background-color:linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color:  #333;
+    position: relative;
+  }
+  
+  #hero .content {
+    max-width: 50%;
+  }
+  
+  #hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  #hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta-buttons a {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-buttons .primary {
+    background-color: #FFD700;
+    color: #333;
+  }
+  
+  .cta-buttons .primary:hover {
+    background-color: #ffcc00;
+  }
+  
+  .cta-buttons .secondary {
+    background-color: #fff;
+    color: #007BFF;
+  }
+  
+  .cta-buttons .secondary:hover {
+    background-color: #f1f1f1;
+  }
+  
+  #hero .hero-image img {
+    max-width: 40%;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Funcionalidades */
+  #funcionalidades {
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+  }
+  
+  #funcionalidades h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .feature-card {
+    background-color: #fff;
+    padding: 30px;
+    width: 250px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Depoimentos */
+  #depoimentos {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  #depoimentos h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .testimonials {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .testimonial {
+    background-color: #fff;
+    padding: 30px;
+    width: 300px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+  }
+  
+  .testimonial p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .testimonial h4 {
+    font-weight: 600;
+  }
+  
+  /* Rodapé */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer .social-icons a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 15px;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  footer .social-icons a:hover {
+    color: #FFD700;
+  }
+  
+  /* Animações */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    #hero {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    #hero .hero-image {
+      margin-top: 30px;
+    }
+  
+    .features {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .feature-card {
+      width: 80%;
+    }
+  
+    .testimonials {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .testimonial {
+      width: 80%;
+    }
+  }
+  /* Estilos para o Popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup h2 {
+    margin-bottom: 20px;
+  }
+  
+  .popup input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .popup .close-popup {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .popup .close-popup:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Efeito de Hover nos Botões */
+  .cta-buttons .primary:hover {
+    background-color: #ffcc00;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .cta-buttons .secondary:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+/* Funcionalidades */
+#funcionalidades {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  #funcionalidades h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+  
+  .slider-container {
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .feature-card {
+    background-color: #fff;
+    padding: 30px;
+    width: 28%; /* Diminui a largura para separar mais as funcionalidades */
+    margin: 0 10px; /* Adiciona espaçamento entre as funcionalidades */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left;
+    flex-shrink: 0; /* Não permite que as funcionalidades encolham */
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card p {
+    font-size: 1rem;
+  }
+  
+  /* Estilo das bolinhas de navegação */
+  .navigation-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .navigation-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navigation-dot.active {
+    background-color: #333;
+  }
+  
+  .navigation-dot:hover {
+    background-color: #777;
+  }
+  #depoimentos {
+    background-color: #f0f4f8;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  #depoimentos h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .testimonial {
+    background: #fff;
+    padding: 30px;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-style: italic;
+  }
+  #integracoes {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  #integracoes h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .integrations {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .integrations img {
+    height: 50px;
+    transition: transform 0.3s;
+  }
+  
+  .integrations img:hover {
+    transform: scale(1.1);
+  }
+  #comparativo {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  #comparativo h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  #comparativo table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+  
+  #comparativo th, #comparativo td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #comparativo th {
+    background-color: #007BFF;
+    color: #fff;
+  }
+  #cta-final {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+  }
+  
+  #cta-final h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  
+  #cta-final p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .btn-destaque {
+    background-color: #ffcc00;
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-destaque:hover {
+    background-color: #e6b800;
+  }
+        

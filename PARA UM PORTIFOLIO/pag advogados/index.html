@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carleto e Mattar Advogados</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- AOS Animation CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Carleto e Mattar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#banner">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#escritorio">Quem Somos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#equipe">Equipe</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#depoimentos">Depoimentos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <section id="banner" class="d-flex align-items-center justify-content-center text-center text-white">
+    <div class="overlay"></div>
+    <div class="container position-relative" data-aos="zoom-in">
+        <h1 class="display-4">Especializados em Direito de Família e Sucessões</h1>
+        <p class="lead">Com foco também em Direito Imobiliário, Civil e Criminal</p>
+    </div>
+</section>
+
+
+    <!-- Escritório -->
+    <section id="escritorio" class="container py-5 text-center" data-aos="fade-up">
+        <h2>O Escritório</h2>
+        <p>Nosso compromisso é fornecer atendimento jurídico personalizado.</p>
+    </section>
+
+    <section id="equipe" class="container py-5">
+    <h2 class="text-center mb-5" data-aos="fade-up">Nossa Equipe</h2>
+    <div class="row g-5">
+        <!-- Advogado 1 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card shadow-sm border-0 rounded-lg">
+                <img src="https://th.bing.com/th/id/OIP.9CeT1GKaCGeGRa9ulxtcDQHaJX?cb=iwp2&w=784&h=992&rs=1&pid=ImgDetMain" alt="Tiago Carleto de Almeida" class="card-img-top rounded-circle mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Dr. Tiago Carleto de Almeida</h5>
+                    <p class="card-text">Especialista em Direito de Família e Imobiliário</p>
+                    <p class="text-muted">OAB/SP 123.456</p>
+                    <a href="tiago-carleto.html" class="btn">Ver mais</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advogado 2 -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card shadow-sm border-0 rounded-lg">
+                <img src="https://th.bing.com/th/id/OIP.51Wqg91APNbfYcNvzOHwjAAAAA?cb=iwp2&rs=1&pid=ImgDetMain" alt="Heine Mattar Mattar" class="card-img-top rounded-circle mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Dr. Heine Mattar Mattar</h5>
+                    <p class="card-text">Especialista em Direito de Família e Imobiliário</p>
+                    <p class="text-muted">OAB/SP 654.321</p>
+                    <a href="heine-mattar.html" class="btn">Ver mais</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advogado 3 (exemplo, adicione mais conforme necessário) -->
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card shadow-sm border-0 rounded-lg">
+                <img src="https://th.bing.com/th/id/OIP.0IcbfV4Z0DcD_pWXhThBrwHaGP?cb=iwp2&rs=1&pid=ImgDetMain" alt="Nome do Advogado" class="card-img-top rounded-circle mx-auto d-block" style="width: 150px; height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Dr. Nome do Advogado</h5>
+                    <p class="card-text">Especialista em Direito Penal</p>
+                    <p class="text-muted">OAB/SP 789.123</p>
+                    <a href="#!" class="btn btn-outline-dark btn-sm">Ver mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="areas" class="container py-5">
+    <hr class="mb-5" />
+    <h2 class="text-center mb-4" data-aos="fade-up">Áreas de Atuação</h2>
+    <div class="accordion" id="accordionAreas">
+        <!-- Civil -->
+        <div class="accordion-item" data-aos="fade-up">
+            <h2 class="accordion-header" id="headingCivil">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCivil" aria-expanded="true">
+                    <i class="fas fa-gavel me-2"></i> Direito Civil
+                </button>
+            </h2>
+            <div id="collapseCivil" class="accordion-collapse collapse show" data-bs-parent="#accordionAreas">
+                <div class="accordion-body">
+                    Atuação em contratos, responsabilidade civil, indenizações, cobranças judiciais e extrajudiciais. Representação em litígios e orientações preventivas.
+                </div>
+            </div>
+        </div>
+
+        <!-- Família -->
+        <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="accordion-header" id="headingFamilia">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFamilia" aria-expanded="false">
+                    <i class="fas fa-users me-2"></i> Direito de Família
+                </button>
+            </h2>
+            <div id="collapseFamilia" class="accordion-collapse collapse" data-bs-parent="#accordionAreas">
+                <div class="accordion-body">
+                    Especialização em divórcios, guarda, pensão alimentícia, inventários, testamentos, partilhas e dissoluções de união estável.
+                </div>
+            </div>
+        </div>
+
+        <!-- Imobiliário -->
+        <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="accordion-header" id="headingImobiliario">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImobiliario" aria-expanded="false">
+                    <i class="fas fa-home me-2"></i> Direito Imobiliário
+                </button>
+            </h2>
+            <div id="collapseImobiliario" class="accordion-collapse collapse" data-bs-parent="#accordionAreas">
+                <div class="accordion-body">
+                    Aconselhamento e representação em compra e venda de imóveis, contratos de locação, ações de despejo, usucapião, inventários com imóveis e regularizações.
+                </div>
+            </div>
+        </div>
+
+        <!-- Criminal -->
+        <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="accordion-header" id="headingCriminal">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCriminal" aria-expanded="false">
+                    <i class="fas fa-balance-scale me-2"></i> Direito Criminal
+                </button>
+            </h2>
+            <div id="collapseCriminal" class="accordion-collapse collapse" data-bs-parent="#accordionAreas">
+                <div class="accordion-body">
+                    Defesa em inquéritos policiais e processos criminais. Atuação em júris, medidas protetivas, crimes contra a honra, patrimônio e crimes empresariais.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-5 ">
+        <div class="container">
+            <h2 class="text-center mb-4" data-aos="fade-up">Depoimentos de Clientes</h2>
+            <div id="carouselDepoimentos" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="text-center">
+                            <blockquote class="blockquote">
+                                <p class="mb-4">"Atendimento impecável e soluções jurídicas rápidas. Recomendo fortemente!"</p>
+                                <footer class="blockquote-footer">Maria Santos</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <blockquote class="blockquote">
+                                <p class="mb-4">"Equipe extremamente capacitada e dedicada. Resolveram meu caso com agilidade."</p>
+                                <footer class="blockquote-footer">João Pereira</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <blockquote class="blockquote">
+                                <p class="mb-4">"Me senti seguro e bem orientado em todas as etapas do processo."</p>
+                                <footer class="blockquote-footer">Ana Carvalho</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselDepoimentos" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="container py-5" data-aos="fade-left">
+        <h2 class="text-center mb-4">Contato</h2>
+        <form>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Seu nome" required>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Seu email" required>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="Sua mensagem" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark">Enviar</button>
+        </form>
+        <div class="mt-4">
+            <p><i class="fas fa-phone"></i> (11) 1234-5678</p>
+            <p><i class="fas fa-envelope"></i> contato@carletomattar.com.br</p>
+            <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - São Paulo, SP</p>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section id="mapa" class="container mb-5">
+        <h2 class="text-center mb-4" data-aos="fade-up">Localização</h2>
+        <div class="ratio ratio-16x9">
+            <iframe src="https://www.google.com/maps/embed?pb=SEU_CODIGO_DE_MAPA" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="top-btn" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Carleto e Mattar Advogados - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

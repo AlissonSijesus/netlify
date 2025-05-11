@@ -1,0 +1,178 @@
+/* Fundos e texto */
+body {
+    background-color: #2c3e50; /* fundo escuro */
+    color: #ecf0f1; /* texto claro */
+    font-family: Arial, sans-serif;
+}
+
+/* Banner */
+#banner {
+    background: url('https://quadrosdecorativos.com/wp-content/uploads/2022/09/CAPAQuadro-Justica-Direito-e-Ordem.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* sombra suave no texto */
+    transition: opacity 0.8s ease;
+}
+
+#banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* escurece a imagem para destacar o texto */
+    z-index: 1;
+}
+
+#banner .container {
+    z-index: 2;
+}
+
+#banner.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Cards de equipe */
+/* Cards de equipe */
+#equipe .card {
+    background-color: #34495e; /* fundo mais escuro para os cards */
+    color: #ecf0f1; /* texto claro */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/* Efeito hover nos cards */
+#equipe .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilo das imagens dos advogados */
+#equipe img {
+    border: 5px solid #fff; /* borda branca */
+    border-radius: 50%; /* borda circular */
+    width: 150px; /* Tamanho da imagem */
+    height: 150px; /* Tamanho da imagem */
+    object-fit: cover; /* Garantir que a imagem preencha o espaço */
+    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+}
+
+/* Títulos e texto dos advogados */
+#equipe .card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #b4b46c; /* Dourado para destacar o nome */
+    margin-bottom: 10px; /* Espaçamento entre o título e o texto */
+}
+
+/* Descrição dos advogados */
+#equipe .card-text {
+    font-size: 1rem; /* Tamanho do texto */
+    color: #ecf0f1; /* Texto claro */
+    line-height: 1.6; /* Maior espaçamento entre as linhas para facilitar a leitura */
+}
+
+/* Botões de ação */
+#equipe .btn {
+    background-color: #dfdddd; /* Cor dourada */
+    color: rgb(5, 5, 5);
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px; /* Espaçamento no topo do botão */
+    transition: background-color 0.3s ease;
+}
+
+#equipe .btn:hover {
+    background-color: #5e5a5a; /* Dourado mais escuro no hover */
+}
+
+/* Melhorando a visibilidade do conteúdo nos cards */
+#equipe .card-body {
+    background-color: #2c3e50; /* Fundo mais escuro dentro do card */
+    color: #ecf0f1; /* Texto claro dentro do card */
+    padding: 20px;
+    border-radius: 15px;
+}
+
+
+/* Títulos e cabeçalhos */
+h1, h2, h3, h4, h5 {
+    color: #ecf0f1; /* cor clara para títulos */
+}
+
+/* Accordion */
+.accordion-button {
+    font-weight: 600;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #e9ecef;
+}
+
+.accordion-body {
+    color: #555;
+}
+
+/* Rodapé */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 0.875rem;
+}
+
+/* Botão de rolagem para cima */
+#top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    font-size: 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+/* Estilo do overlay de imagem de banner */
+#banner {
+    background: url('https://quadrosdecorativos.com/wp-content/uploads/2022/09/CAPAQuadro-Justica-Direito-e-Ordem.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* sombra suave no texto */
+}
+
+#banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* escurece a imagem para destacar o texto */
+    z-index: 1;
+}
+
+#banner .container {
+    z-index: 2;
+}
+/*thiago*/
+
